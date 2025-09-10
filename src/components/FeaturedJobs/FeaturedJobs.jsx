@@ -30,7 +30,7 @@ const FeaturedJobs = () => {
                     featuredJobs.slice(0, dataLength).map((featuredJob,idx) => <FeaturedJob key={idx} featuredJob={ featuredJob} />  )
                 }
             </div>
-            <div className={dataLength === featuredJobs.length && 'hidden'}>
+            <div className={dataLength === featuredJobs.length &&'hidden'}>
                 <button onClick={()=>setDataLength(featuredJobs.length)} className="btn btn-primary">Show All</button>
             </div>
 
@@ -39,12 +39,6 @@ const FeaturedJobs = () => {
 
 
 
-
-
-
-            {/* <div className={dataLength === featuredJobs.length &&'hidden'}>
-                <button onClick={()=>setDataLength(featuredJobs.length)} className="btn btn-primary">Show All</button>
-            </div> */}
 
             
         </div>

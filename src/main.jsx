@@ -14,6 +14,7 @@ import Statistics from './components/Statistics/Statistics';
 import AppliedJobs from './components/AppliedJobs/AppliedJobs';
 import Blogs from './components/Blogs/Blogs';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import FeaturedJobDetails from './components/FeaturedJobDetails/FeaturedJobDetails';
 
 const router = createBrowserRouter([
   
@@ -37,10 +38,16 @@ const router = createBrowserRouter([
       {
         path: '/blogs',
         element: <Blogs/>
+      },
+      {
+        path: '/featuredJobs/:id',
+        element: <FeaturedJobDetails/>
       }
     ]
   }
 ]);
+
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

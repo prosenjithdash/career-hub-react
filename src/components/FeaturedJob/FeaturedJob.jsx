@@ -1,5 +1,6 @@
 import { IoLocationSharp } from "react-icons/io5";
 import { AiFillDollarCircle } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const FeaturedJob = ({ featuredJob }) => {
     const { id, logo, company_name, job_title, location, salary, remote_or_onsite, job_type } = featuredJob;
@@ -26,7 +27,9 @@ const FeaturedJob = ({ featuredJob }) => {
                     </div>
                 </div>
                 <div className="card-actions ">
-                    <button className="btn btn-primary">View Details</button>
+                    <Link to={`/featuredJobs/${id}`}>
+                        <button className="btn btn-primary">View Details</button>
+                    </Link>
                 </div>
             </div>
         </div>
