@@ -7,6 +7,7 @@ const FeaturedJobDetails = () => {
 
     // get id from route
     const { id } = useParams();
+    const idInt = parseInt(id)
 
     // store data with useState
     const [jobD, setJobD] = useState(null)
@@ -16,7 +17,7 @@ const FeaturedJobDetails = () => {
         fetch('/jobs.json')
             .then(res => res.json())
             .then(data => {
-                const singJobData = data.find(job => job.id === parseInt(id))
+                const singJobData = data.find(job => job.id === idInt)
                 setJobD(singJobData)
                 // console.log(singJobData)
                 
@@ -29,7 +30,7 @@ const FeaturedJobDetails = () => {
     
 
     const handleApplyJob = () => {
-        saveJobApplication(id);
+        saveJobApplication(idInt);
         toast('You have apply successfully')
     }
     return (
