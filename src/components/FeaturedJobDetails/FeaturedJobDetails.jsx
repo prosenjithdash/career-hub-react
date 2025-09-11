@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import { saveJobApplication } from '../../utility/localStorage';
 
 const FeaturedJobDetails = () => {
 
@@ -25,6 +27,11 @@ const FeaturedJobDetails = () => {
         return <p>Data is loading...</p>
     }
     
+
+    const handleApplyJob = () => {
+        saveJobApplication(id);
+        toast('You have apply successfully')
+    }
     return (
         <div className='flex justify-between gap-5 items-baseline'>
             <div className='py-[50px] max-w-[700px]'>
@@ -80,9 +87,12 @@ const FeaturedJobDetails = () => {
 
 
                 </div>
-                <button className="btn btn-primary w-full">Apply Now</button>
+                <button onClick={handleApplyJob} className="btn btn-primary w-full">Apply Now</button>
             </div>
-       </div>
+            <ToastContainer />
+
+        </div>
+        
     );
 };
 
